@@ -34,7 +34,7 @@ module Exercise1_tb;
   initial 
     begin
       
-      $monitor(a,b,out);
+      $monitor(a,b,op,out);
       
      for (op = 0; op < 5; op = op + 1) begin
           for (a = 0; a < 256; a = a + 1) begin
