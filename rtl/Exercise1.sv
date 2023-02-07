@@ -20,3 +20,45 @@ module Exercise1 (
       3: out = ~(a & b);
     endcase
 endmodule
+
+
+`timescale 1 ns/10 ps
+
+module Exercise1_tb;
+  reg [1:0] op,
+  reg [7:0] a,b,out;
+  
+  
+  localparam duration = 10;
+  Exercise1 UUT ( .op(op), .a(a), .b(b), .out(out));
+  initial 
+    begin
+      
+      $monitor(a,b,out);
+      
+     for (op = 0; op < 5; op = op + 1) begin
+          for (a = 0; a < 256; a = a + 1) begin
+            for ( b = 0; b < 256; b = b + 1) begin // is there any better way around this? Since i think it would give me an error for bit overflow.
+          #duration
+        end
+      end
+    end
+  end
+endmodule
+
+    
+
+      
+          
+      
+      
+      
+      
+
+
+
+
+
+
+
+  
