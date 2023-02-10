@@ -22,6 +22,20 @@ module Exercise1 (
 endmodule
 
 
+//assuming module gets initiaized to  public Exercise 1 
+
+for (j = 0; j < 4; j = j + 1){
+  for (i = 0; i < 16; i = i + 1){
+    
+    Exercise1 model;
+    model[i].op = j;
+    model[i].a = i;
+    model[i].b = i;
+    model[i].eval();
+  }
+}
+
+/*
 `timescale 1 ns/10 ps
 
 module Exercise1_tb;
@@ -45,7 +59,7 @@ module Exercise1_tb;
     end
   end
 endmodule
-
+*/
     
 
       
