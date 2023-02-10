@@ -22,9 +22,10 @@ module Exercise1 (
 endmodule
 
 
+int main(){
+
 //assuming module gets initiaized to  public Exercise 1 
   Exercise1 model;
-for(h = 0; h < 4; h = h + 1){
   for (i = 0; i < 256; i = i + 1){
     for (k = 0; k < 256; k = k + 1){
       
