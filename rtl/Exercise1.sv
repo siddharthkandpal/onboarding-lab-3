@@ -23,17 +23,20 @@ endmodule
 
 
 //assuming module gets initiaized to  public Exercise 1 
-
-for (j = 0; j < 4; j = j + 1){
-  for (i = 0; i < 16; i = i + 1){
-    
-    Exercise1 model;
-    model[i].op = j;
-    model[i].a = i;
-    model[i].b = i;
-    model[i].eval();
+  Exercise1 model;
+for(h = 0; h < 4; h = h + 1){
+  for (i = 0; i < 256; i = i + 1){
+    for (k = 0; k < 256; k = k + 1){
+      
+    model.op = 0;
+    model.a = i;
+    model.b = k;
+    model.eval();
   }
+ }
 }
+//will it keep evaluating after each iteration and give out results? probably need more references for UVM testbenching in verilator.
+  
 
 /*
 `timescale 1 ns/10 ps
