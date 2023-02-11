@@ -17,6 +17,26 @@ module Exercise2 (
     else out <= {out[14:0], out[10] ^ out[8] ^ out[3] ^ out[1]};
 endmodule
 
+//approach for the testbench
+
+int main(){
+  
+  Exercise2 model;
+  model.clk = 0;
+  model.reset = 1;
+  model.init = 65536;
+  model.eval();
+  
+  int fileop;
+  file op = out;
+  while(fileop != 0){
+    std::cout<<"incorrect";
+  }
+}
+
+
+
+/*
 module testbench;
   reg clk, reset;
   reg [15:0] init;
@@ -36,3 +56,5 @@ module testbench;
     clk <= ~clk;
   end
 endmodule
+*/
+
