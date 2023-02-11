@@ -96,7 +96,7 @@ int main(){
     }
   }
   
-  if( model.out != expected value){
+  if( model.out != expectedvalue){
     return 1;
   }
 }
