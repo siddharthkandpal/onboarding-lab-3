@@ -22,6 +22,23 @@ module Exercise1 (
 endmodule
 
 
+int expectedresult(int op, int a, int b){
+ uint8_t expectedoutput;
+  
+  if(op = 0){
+    expectedoutput = (a ^ b);
+    else if(op = 1){
+      expectedoutput = (a << b);
+    }
+    else if(op = 2){
+      expectedoutput = (a % b);
+    }
+    else {
+      expectedoutput = ~( a & b );
+    }
+  }
+      
+
 int main(){
 
 //assuming module gets initiaized to  public Exercise 1 
@@ -35,7 +52,12 @@ int main(){
     model.eval();
   }
  }
+  expectedresult( a, b , op);
+  if(model.out!= expectedresult){
+    return 1;
+  }
 }
+
 //will it keep evaluating after each iteration and give out results? probably need more references for UVM testbenching in verilator.
   
 
