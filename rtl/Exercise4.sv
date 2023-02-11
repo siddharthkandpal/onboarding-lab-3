@@ -69,17 +69,17 @@ uint16_t expectedvalue;
     else if(sel = 2 && cs = 1){
       expected value = 30;
     }
-    else if(sel > 2 && cs = 1){
+    else{
       expected value = orand( 10, 20, 30 );
     }
-    else{
-      if(cs = 0){
-        expected value = 0;
-      }
   }
     
-    std::cout<<"expected value is : "<< expectedvalue <<std::endl;
+  std::cout<<"expected value is : "<< expectedvalue <<std::endl;
+  if (model.eval != expectedvalue){
+    return 1;
  }
+}
+
   
                              
   
