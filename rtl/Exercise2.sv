@@ -20,17 +20,24 @@ endmodule
 //approach for the testbench
 
 int main(){
-  
+uint8_t expectedvalue;
   Exercise2 model;
-  model.clk = 0;
-  model.reset = 1;
-  model.init = 65536;
-  model.eval();
   
-  int fileop;
-  file op = out;
-  while(fileop != 0){
-    std::cout<<"incorrect";
+    for(reset = 0; reset < 2; reset++){
+    model.clk = 0;
+    model.init = 15;
+    model.eval();
+    }
+  
+  if(reset = 1){
+    expectedvalue = ~(init);
+  }
+  else{
+    expectedvalue = ( out & 0x7FFF | ((out & 0x0600)^(out & 0x0100) ^ (out & 0x0008) ^ (out & 0x0002)));
+  }
+  
+  if(model.out != expectedvalue){
+  return 1;
   }
 }
 
