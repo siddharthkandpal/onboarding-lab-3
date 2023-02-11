@@ -35,3 +35,14 @@ module Exercise3 (
 
   Mystery2 gamma (.*);
 endmodule
+
+//tb
+
+//include namespace std
+
+int main(){
+  uint16_t expectedvalue;
+  
+  Exercise3 model;
+  
+  
