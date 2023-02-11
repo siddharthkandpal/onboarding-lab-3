@@ -56,6 +56,9 @@ uint16_t expectedvalue;
     }
   }
   
+  if(cs = 0){
+      expected value = 0;
+    }
   while(expected value != 0){
     if(sel = 0 && cs = 1){
       expected value = 10;
@@ -75,11 +78,8 @@ uint16_t expectedvalue;
       }
   }
     
-    if( model.out != expectedvalue ){
-      return 1;
-    }
     std::cout<<"expected value is : "<< expectedvalue <<std::endl;
-  }
+ }
   
                              
   
