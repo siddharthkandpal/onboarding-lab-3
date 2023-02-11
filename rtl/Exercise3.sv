@@ -19,6 +19,7 @@ module Exercise3 (
 );
   logic [7:0] a_in;
   logic [7:0] b_in;
+  logic [2:0] count;
 
   Mystery1 alpha (
       .a(a[1:0]),
@@ -42,7 +43,62 @@ endmodule
 
 int main(){
   uint16_t expectedvalue;
+  //  uint16_t
+  //  uint16_t
+  
   
   Exercise3 model;
+ for(reset = 0; reset < 2; reset++){
+  for(clk = 0; clk < 2: clk++){
+    for(a = 0; a < 5; a++){
+     
+    model.b = 0x0101010110101010;
+    model.c = 0x1111111111111111;
+    model.count = a;
+    model.eval();
+    }
+  }
+ }
   
   
+  if(clk != 0 && a = 0){
+      expectedvalue = 0x00010111;
+    }
+  else if(clk != 0 && a = 1){
+      expectedvalue = 0x01111010;
+    }
+  else if(clk != 0 && a = 2){
+     expectedvalue = 0x01010101;
+   }
+   else{
+     expected value = 0x11111111;
+   }
+
+  
+  while(clk = 0){
+    if(reset = 1){
+    expectedvalue =  ( b_in << 8 | a_in );
+  }
+    else if(reset = 0 && count = 0 ){
+      expectedvalue = ( a_in << 8 | (out & 0xFF) );
+    }
+    else if(reset = 0 && count = 1){
+      expectedvalue = ( d & 0xFF | b_in );
+    }
+    else if(reset = 0 && count = 2 ){
+      expectedvalue = ( d & 0xFF | d & 0xFF00 );
+    }
+    else if(reset = 0 && count = 3){
+      expectedvalue = ( d & 0x000F | d & 0x00F0 | d & 0x0F00 | d & 0xF000 );
+    }
+    else{
+      expectedvalue = ( 0 | 0x1 & (^(d)) );
+    }
+  }
+  
+  if( model.out != expected value){
+    return 1;
+  }
+}
+
+ 
